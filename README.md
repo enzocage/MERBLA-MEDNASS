@@ -1,98 +1,67 @@
-🔵 MERBLA MEDNASS
+# **🔵 MERBLA MEDNASS (Marble Madness Retro Edition)**
 
-MERBLA MEDNASS https://codepen.io/Felix-Schmidt2025/pen/bNwrRBX ist ein hochperformantes, isometrisches Geschicklichkeitsspiel, das als Hommage an den Arcade-Klassiker Marble Madness entwickelt wurde. Das gesamte Spiel – inklusive Engine, 6 Leveln, Physik und synthetisiertem Sound – ist in einer einzigen, abhängigkeitsfreien HTML-Datei untergebracht.
+[https://codepen.io/Felix-Schmidt2025/pen/bNwrRBX](https://codepen.io/Felix-Schmidt2025/pen/bNwrRBX)
 
-🚀 Features
+Eine hochperformante, isometrische Neuinterpretation des Arcade-Klassikers **Marble Madness**, realisiert in einer einzigen, minimalistischen HTML5-Datei. Erlebe präzise Physik, prozeduralen Sound und echtes Retro-Feeling direkt im Browser.
 
-Single-File Architecture: Keine externen Assets, Bilder oder Libraries. Alles wird prozedural generiert.
+## **🚀 Highlights**
 
-Retro Glow Aesthetic: CRT-Scanlines, Bloom-Effekte und dynamische isometrische Schatten für echtes Arcade-Feeling.
+* **Single-File Engine:** Das gesamte Spiel (Logik, Grafik-Engine, Physik und Sound) ist in einer einzigen Datei unter 1000 Zeilen Code untergebracht.  
+* **Isometrische 3D-Welt:** Echtes Depth-Sorting sorgt dafür, dass die Murmel korrekt hinter Wänden und Objekten verschwindet.  
+* **CRT-Ästhetik:** Dynamische Glow-Effekte, Scanlines und Screen-Shake simulieren das Gefühl eines alten Arcade-Automaten.  
+* **Prozedurales Audio:** Keine externen Assets\! Alle Sounds (Rollen, Aufprall, Ziel-Fanfare) werden via **Web Audio API** in Echtzeit synthetisiert.  
+* **Mobile Ready:** Unterstützt sowohl Tastatursteuerung als auch intuitive Touch-Gesten.
 
-Synthetisierter Audio-Engine: Echtzeit-Generierung von Soundeffekten (Rollen, Aufprall, Zerbrechen) über die Web Audio API.
+## **🕹 Steuerung**
 
-Präzise Physik: Simulation von Trägheit, Hangabtriebskraft, Reibung (inkl. Eis-Level) und Kollisionen.
+| Eingabe | Aktion |
+| :---- | :---- |
+| **W, A, S, D** / **Pfeiltasten** | Murmel steuern |
+| **Enter** / **Leertaste** | Spiel starten / Menü-Auswahl |
+| **Zahlen 1 \- 6** | Level-Direktwahl (im Hauptmenü) |
+| **Touch / Drag** | Murmel in die entsprechende Richtung lenken |
 
-6 Herausfordernde Level: Von "Practice" bis zum "Nightmare Race" mit steigendem Schwierigkeitsgrad.
+## **🏁 Die Rennen (Races)**
 
-Cross-Platform: Volle Unterstützung für Tastatur (Desktop) und Touch-Gesten (Mobile).
+Das Spiel beinhaltet **6 verifizierte Level** mit steigendem Schwierigkeitsgrad:
 
-🕹 Steuerung
+1. **Practice:** Lerne die Grundlagen der Trägheit.  
+2. **Intermediate:** Erste Hindernisse und Abgründe.  
+3. **Aerial:** Enge Pfade in schwindelerregender Höhe.  
+4. **Silly:** Rutschiges Eis und tückische Steigungen.  
+5. **Ultimate:** Komplexe Verzweigungen und aggressive Gegner.  
+6. **Nightmare:** Die ultimative Herausforderung für deine Feinmotorik.
 
-Eingabe
+## **🛠 Technische Details**
 
-Aktion
+### **Physik & Rendering**
 
-W, A, S, D / Pfeiltasten
+Die Engine nutzt eine klassische isometrische Transformation, um 3D-Koordinaten auf den 2D-Canvas zu projizieren. Die Physik simuliert:
 
-Murmel steuern
+* **Hangabtriebskraft:** Beschleunigung auf Rampen.  
+* **Materialeigenschaften:** Unterschiedliche Reibungswerte auf Bodenplatten und Eis.  
+* **Kollisionserkennung:** Interaktion mit Pyramiden, Stahlkugeln und Schleim-Gegnern.
 
-Enter / Space
+### **Entwickler-Schnittstelle (API)**
 
-Menü-Auswahl bestätigen
+Du kannst das Spiel direkt über die Browser-Konsole (F12) steuern oder modifizieren. Das globale Objekt MarbleMadness bietet folgende Funktionen:
 
-Zahlen 1 - 6
+* loadLevel(index): Lädt ein spezifisches Level (0-5).  
+* setPhysics(params): Ändert Laufzeitparameter (z.B. maxSpeed oder bounce).  
+* exportJSON() / importJSON(data): Erlaubt das Speichern und Laden von Level-Layouts.
 
-Direkte Level-Anwahl im Menü
-
-Touch / Drag
-
-Intuitive Steuerung auf Mobilgeräten
-
-🛠 Technische Details
-
-Isometrische Engine
-
-Das Spiel nutzt eine klassische isometrische Transformation zur Darstellung der 3D-Welt auf einem 2D-Canvas. Ein spezieller Tiefensortierungs-Algorithmus sorgt dafür, dass die Murmel korrekt mit Wänden, Rampen und Hindernissen interagiert.
-
-Physik & Hindernisse
-
-Rampen: Beeinflussen die Beschleunigung basierend auf der Neigungsrichtung.
-
-Eis: Reduzierte Reibung und verzögerte Steuerung.
-
-Pyramiden: Wirken als Bumper und stoßen die Murmel ab.
-
-Säure: Sofortige Zerstörung der Murmel.
-
-Gegner: Slimes und Stahlkugeln mit individuellen Patrouillen-Pfaden.
-
-Web Audio Synthese
-
-Statt statische Dateien zu laden, nutzt das Projekt Oszillatoren:
-
-Das Rollgeräusch ist ein bandpass-gefiltertes weißes Rauschen, dessen Frequenz proportional zur Geschwindigkeit variiert.
-
-Zerbrech-Sounds nutzen Square-Waves mit schnellem Decay.
-
-🔓 Entwickler-Schnittstelle (API)
-
-Das Spiel exponiert ein globales Objekt window.MarbleMadness, über das man via Browser-Konsole (F12) eingreifen kann:
-
-// Level manuell laden
-MarbleMadness.loadLevel(5);
-
-// Physik zur Laufzeit anpassen
-MarbleMadness.setPhysics({ targetSpeed: 0.1, slopeGravity: 0.01 });
-
-// Aktuelle Leveldaten als JSON exportieren
-const levelData = MarbleMadness.exportJSON();
-
-
-📦 Installation
+## **📦 Installation**
 
 Keine Installation notwendig.
 
-Klone das Repository oder kopiere die index.html.
+1. Kopiere den Code in eine Datei namens index.html.  
+2. Öffne die Datei in einem modernen Webbrowser (Chrome, Firefox, Safari oder Edge).  
+3. Fertig\!
 
-Öffne die Datei in einem modernen Webbrowser.
+---
 
-git clone [https://github.com/dein-benutzer/merbla-mednass.git](https://github.com/dein-benutzer/merbla-mednass.git)
-cd merbla-mednass
-open index.html
+*Entwickelt mit Leidenschaft für Retro-Gaming und minimalistischen Code.*
 
+---
 
-📄 Lizenz
-
-Dieses Projekt ist unter der MIT-Lizenz lizenziert. Frei zur Nutzung, Modifikation und Distribution.
-
-Entwickelt mit Leidenschaft für Retro-Gaming und sauberen Code.
+**Soll ich dir noch eine Kurzanleitung schreiben, wie man die Physik-Parameter im Code so anpasst, dass das Spiel einfacher oder schwieriger wird?**
