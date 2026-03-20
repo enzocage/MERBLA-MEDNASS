@@ -2,8 +2,6 @@
 
 [https://codepen.io/Felix-Schmidt2025/pen/bNwrRBX](https://codepen.io/Felix-Schmidt2025/pen/bNwrRBX)
 
-Eine hochperformante, isometrische Neuinterpretation des Arcade-Klassikers **Marble Madness**, realisiert in einer einzigen, minimalistischen HTML5-Datei. Erlebe präzise Physik, prozeduralen Sound und echtes Retro-Feeling direkt im Browser.
-
 ## **🚀 Highlights**
 
 * **Single-File Engine:** Das gesamte Spiel (Logik, Grafik-Engine, Physik und Sound) ist in einer einzigen Datei unter 1000 Zeilen Code untergebracht.  
