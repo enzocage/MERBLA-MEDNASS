@@ -1,6 +1,6 @@
 🔵 MERBLA MEDNASS
 
-MERBLA MEDNASS ist ein hochperformantes, isometrisches Geschicklichkeitsspiel, das als Hommage an den Arcade-Klassiker Marble Madness entwickelt wurde. Das gesamte Spiel – inklusive Engine, 6 Leveln, Physik und synthetisiertem Sound – ist in einer einzigen, abhängigkeitsfreien HTML-Datei untergebracht.
+MERBLA MEDNASS https://codepen.io/Felix-Schmidt2025/pen/bNwrRBX ist ein hochperformantes, isometrisches Geschicklichkeitsspiel, das als Hommage an den Arcade-Klassiker Marble Madness entwickelt wurde. Das gesamte Spiel – inklusive Engine, 6 Leveln, Physik und synthetisiertem Sound – ist in einer einzigen, abhängigkeitsfreien HTML-Datei untergebracht.
 
 🚀 Features
 
